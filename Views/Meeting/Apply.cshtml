@@ -1,0 +1,35 @@
+@model UserInfo
+@{ 
+    ViewBag.Title ="Başvuru Formu"; <!-- layout kısımlarındaki title kısmında gorunur dinamik olarak-->
+}
+
+<main>
+
+    <h1 class="h4 text-center">Toplantı Katılım formu</h1>
+
+    <form method="post" action="/Meeting/Apply" novalidate> <!-- burada novalidate diyerek validation kurallarını html5 yapmasın tamamen yonetimi bizde olsun dedik orn: Email kısmı icin UserInfo sınıfında email propuna [EmailAddress] yazdık bunu html5 kontroluyle default olarak yapacak biz novalidate diyerek html5 kontroluyle degil asp kontroluyle yapsın demis olduk-->
+        <div asp-validation-summary="All"></div> <!--hata mesjlarını gosterir-->
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Ad Soyad</label>
+            <input asp-for="Name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Phone" class="form-label">Telefon</label>
+            <input asp-for="Phone" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Eposta</label>
+            <input asp-for="Email" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="WillAttend" class="form-label">Katılım Durumu</label>
+            <select asp-for="WillAttend" class="form-select">
+                <option value="">Seçiniz</option>
+                <option value="true">Evet, Geliyorum.</option>
+                <option value="false">Hayır, Gelmiyorum.</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Kaydet</button>
+    </form>
+
+</main>

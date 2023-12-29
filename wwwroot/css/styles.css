@@ -1,0 +1,8 @@
+.validation-summary-errors{ /* hatalar kırmızı renk gosterilsin dedik*/
+    color: #dc3545;
+}
+
+.input-validation-error{ /* validation kuralları uymazsa kırmızı borderla inputu isaretledik */
+
+    border: 1px solid #dc3545;
+}
